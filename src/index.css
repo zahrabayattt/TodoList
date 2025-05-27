@@ -60,3 +60,7 @@
 .task-Category {
   @apply text-xs text-[white] bg-[#EA5959] rounded-md px-5 py-1;
 }
+
+.delete-task {
+  @apply cursor-pointer ;
+}
