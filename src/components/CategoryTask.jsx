@@ -3,7 +3,6 @@ const CategoryTask = ({ task, handleChangeValues, addTask}) => {
   function handleSubmit(e) {
     e.preventDefault()
     addTask()
-    showAlert("Well Done!")
   }
 
   return (

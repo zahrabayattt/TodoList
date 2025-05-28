@@ -11,7 +11,8 @@ function App() {
   })
   const [showCategoryForm, setShowCategoryForm] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState(() => {
-  return localStorage.getItem("selectedCategory") || 'All';});
+    return localStorage.getItem("selectedCategory") || 'All';
+  });
   const [alert, setAlert] = useState('');
 
   function handleChangeValues(event) {
@@ -33,25 +34,29 @@ function App() {
     setTasksList(prev =>prev.filter(task => task.id !== id))
     showAlert("Task Deleted Successfully")
   }
+
   function completeTask(id) {
     setTasksList(prev => prev
       .map(task =>task.id === id ? ( !task.isDone && showAlert("Well Done! Task Completed :)"), { ...task, isDone: !task.isDone } ): task));
   }
-  useEffect(() => {
-    localStorage.setItem("tasksList", JSON.stringify(tasksList))
-  }, [tasksList])
+  
   function handleCategoryValues(category) {
     setSelectedCategory(category);
   }
-  useEffect(() => {
-    localStorage.setItem("selectedCategory", selectedCategory);
-  }, [selectedCategory]);
+
   function showAlert(message) {
     setAlert(message);
     setTimeout(() => {
       setAlert('');
     }, 2000);
   }
+  useEffect(() => {
+    localStorage.setItem("tasksList", JSON.stringify(tasksList))
+  }, [tasksList])
+
+  useEffect(() => {
+    localStorage.setItem("selectedCategory", selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <div className="container">
