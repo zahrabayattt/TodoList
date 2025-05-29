@@ -11,7 +11,7 @@ const TasksList = ({ tasksList, deleteTask, completeTask,selectedCategory}) => {
             </p>
             <span className="task-Category">{task.category}</span>
           </div>
-          <img className="delete-task" src="./Vector.png" alt="" onClick={() => deleteTask(task.id)}/>
+          <img className="delete-task" src="./Vector.svg" alt="" onClick={() => deleteTask(task.id)}/>
         </div>
       ))}
     </div>

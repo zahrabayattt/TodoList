@@ -62,5 +62,5 @@
 }
 
 .delete-task {
-  @apply cursor-pointer ;
+  @apply cursor-pointer object-cover;
 }
